@@ -49,6 +49,17 @@ public class InputManager : MonoBehaviour
             if (commands.Contains(parts[0]))
             {
                 UpdateStory(input);
+                if (parts[0] == "go")
+                {
+                    if (NavigationManager.instance.Switch(parts[1]))
+                    {
+                        //Come back to later...
+                    }
+                    else
+                    {
+                        UpdateStory("Direction Does not exist, try again");
+                    }
+                }
             }
             else
             {
