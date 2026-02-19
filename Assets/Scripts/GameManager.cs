@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public List<string> inventory = new List<string>();
+
+
+
     private void Awake()
     {
         if (instance == null)
@@ -18,6 +22,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        NavigationManager.instance.onRestart += ResetGame; //no parentheses, just points event to function
+    }
+
+    void ResetGame()
+    {
+        inventory.Clear();
     }
 }

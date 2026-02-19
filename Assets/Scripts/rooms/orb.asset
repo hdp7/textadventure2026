@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: orb
   m_EditorClassIdentifier: 
   roomName: Orb
-  description: Woah, cool orb!
+  description: Woah, cool orb! This could come in very useful...
   exits:
   - {fileID: 11400000, guid: ac9ff88776384374389a37d69fb942db, type: 2}
   - {fileID: 11400000, guid: d1fa62c9de2baa3458bb68555faa781c, type: 2}
+  isLocked: 0
+  isHidden: 0
+  items:
+  - orb

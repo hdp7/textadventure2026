@@ -7,5 +7,13 @@ public class Room : ScriptableObject
     [TextArea]
     public string description;
     public Exit[] exits;
+
+    //Another way to handle items
+    //public bool hasKey;
+    //public bool hasOrb;
+
+
+
+    public string[] items;
 }
 

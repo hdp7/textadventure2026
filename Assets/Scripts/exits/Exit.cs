@@ -8,5 +8,7 @@ public class Exit : ScriptableObject
     [TextArea]
     public string description;
     public Room room; //room that the exit is attached to
-
+    //Restricts room access
+    public bool isLocked;
+    public bool isHidden;
 }

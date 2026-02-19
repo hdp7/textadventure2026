@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: toExitEast
   m_EditorClassIdentifier: 
   direction: 2
-  description: This door looks promising...
+  description: East looks like a way out...
   room: {fileID: 11400000, guid: 4c28f310f04bf5c4b8d10d023212a12f, type: 2}

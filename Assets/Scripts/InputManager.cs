@@ -34,11 +34,12 @@ public class InputManager : MonoBehaviour
         userInput.onEndEdit.AddListener(GetInput);
         commands.Add("go");
         commands.Add("get");
+
     }
 
     void GetInput(string input)
     {
-        char[] delims = {' '};
+        char[] delims = { ' ' };
         userInput.text = "";
         userInput.ActivateInputField();
 
@@ -58,6 +59,18 @@ public class InputManager : MonoBehaviour
                     else
                     {
                         UpdateStory("Direction Does not exist, try again");
+                    }
+                }
+                if (parts[0] == "get")
+                {
+                    if (NavigationManager.instance.GetItem(parts[1]))
+                    {
+                        GameManager.instance.inventory.Add(parts[1]);
+                        UpdateStory("The " + parts[1] + " was added to your inventory");
+                    }
+                    else
+                    {
+                        UpdateStory("The " + parts[1] + " was not found.");
                     }
                 }
             }
