@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Room", menuName = "Text Adventure/Room")]
@@ -14,6 +15,6 @@ public class Room : ScriptableObject
 
 
 
-    public string[] items;
+    public List <string> items;
 }
 

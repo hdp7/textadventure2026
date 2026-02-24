@@ -9,12 +9,14 @@ using TMPro;
 public class InputManager : MonoBehaviour
 {
     public static InputManager instance;
+    
 
     public TMP_Text storyText; // the story 
     public TMP_InputField userInput; // the input field object
     public TMP_Text inputText; // part of the input field where user enters response
     public TMP_Text placeHolderText; // part of the input field for initial placeholder text
-    
+    public ScrollRect scrollRect;
+
     private string story; // holds the story to display
     private List<string> commands = new List<string>(); //Holds all commands
 
@@ -34,6 +36,9 @@ public class InputManager : MonoBehaviour
         userInput.onEndEdit.AddListener(GetInput);
         commands.Add("go");
         commands.Add("get");
+        commands.Add("restart");
+
+        //NavigationManager.instance.onRestart += someFunction;
 
     }
 
@@ -61,7 +66,7 @@ public class InputManager : MonoBehaviour
                         UpdateStory("Direction Does not exist, try again");
                     }
                 }
-                if (parts[0] == "get")
+                else if (parts[0] == "get")
                 {
                     if (NavigationManager.instance.GetItem(parts[1]))
                     {
@@ -72,6 +77,10 @@ public class InputManager : MonoBehaviour
                     {
                         UpdateStory("The " + parts[1] + " was not found.");
                     }
+                }
+                else if (parts[0] == "restart")
+                {
+                    NavigationManager.instance.GameRestart();
                 }
             }
             else
@@ -85,5 +94,12 @@ public class InputManager : MonoBehaviour
     {
         story += "\n" + msg;
         storyText.text = story;
+        StartCoroutine(ScrollToBottom());
+    }
+
+    IEnumerator ScrollToBottom()
+    {
+        yield return new WaitForEndOfFrame(); //waits until text is updated
+        scrollRect.verticalNormalizedPosition = 0f;
     }
 }

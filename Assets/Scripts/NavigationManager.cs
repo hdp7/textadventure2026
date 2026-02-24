@@ -50,9 +50,7 @@ public class NavigationManager : MonoBehaviour
 
         if (currentRoom.name == "dragon")
         {
-            onRestart.Invoke();
-            currentRoom = startingRoom;
-            Unpack();
+            GameRestart();
         }
     }
 
@@ -100,9 +98,23 @@ public class NavigationManager : MonoBehaviour
                 {
                     toKeyNorth.isHidden = false;
                 }
-                return true; //item found
             }
         }
-        return false; //item not found
+
+        if (isFound)
+        {
+            currentRoom.items.Remove(item);
+            currentRoom.description = "This room used to have a blue glow...";
+        }
+
+        return isFound; //item not found
+    }
+
+    public void GameRestart()
+    {
+        onRestart.Invoke();
+        currentRoom = startingRoom;
+        toKeyNorth.isHidden = true;
+        Unpack();
     }
 }
