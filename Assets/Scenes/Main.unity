@@ -1241,6 +1241,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingRoom: {fileID: 11400000, guid: c45991d744e799b48a394957398bbf67, type: 2}
   currentRoom: {fileID: 0}
+  rooms:
+  - {fileID: 11400000, guid: 4db543c76798f584fb2d27fc3abaa7e7, type: 2}
+  - {fileID: 11400000, guid: 4c28f310f04bf5c4b8d10d023212a12f, type: 2}
+  - {fileID: 11400000, guid: 2583d7558e0c8b84aa3dcbf59d75c598, type: 2}
+  - {fileID: 11400000, guid: dc8dcdb34d2ad2b48844f517d5d3e96a, type: 2}
+  - {fileID: 11400000, guid: 64b367cc3fded8540b7c8b208b7cb419, type: 2}
+  - {fileID: 11400000, guid: c45991d744e799b48a394957398bbf67, type: 2}
+  - {fileID: 11400000, guid: 9498a018f38d2e04cb05e3e44e9d7507, type: 2}
   toKeyNorth: {fileID: 11400000, guid: a9111387728769142a3559e90fba9cd9, type: 2}
 --- !u!1 &1127362118
 GameObject:
@@ -1552,7 +1560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.38039216}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

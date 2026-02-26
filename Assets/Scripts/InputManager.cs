@@ -37,10 +37,12 @@ public class InputManager : MonoBehaviour
         commands.Add("go");
         commands.Add("get");
         commands.Add("restart");
+        commands.Add("save");
 
         //NavigationManager.instance.onRestart += someFunction;
-
     }
+
+
 
     void GetInput(string input)
     {
@@ -52,43 +54,54 @@ public class InputManager : MonoBehaviour
         {
             string[] parts = input.ToLower().Split(delims); //parts[0] = command, parts[1] = direction/item to pick up
 
-            if (commands.Contains(parts[0]))
+            if (parts.Length >= 2)
             {
-                UpdateStory(input);
-                if (parts[0] == "go")
+                if (commands.Contains(parts[0]))
                 {
-                    if (NavigationManager.instance.Switch(parts[1]))
+                    UpdateStory(input);
+                    if (parts[0] == "go")
                     {
-                        //Come back to later...
+                        if (NavigationManager.instance.Switch(parts[1]))
+                        {
+                            //Come back to later...
+                        }
+                        else
+                        {
+                            UpdateStory("Direction Does not exist, try again");
+                        }
                     }
-                    else
+                    else if (parts[0] == "get")
                     {
-                        UpdateStory("Direction Does not exist, try again");
+                        if (NavigationManager.instance.GetItem(parts[1]))
+                        {
+                            GameManager.instance.inventory.Add(parts[1]);
+                            UpdateStory("The " + parts[1] + " was added to your inventory");
+                        }
+                        else
+                        {
+                            UpdateStory("The " + parts[1] + " was not found.");
+                        }
                     }
                 }
-                else if (parts[0] == "get")
-                {
-                    if (NavigationManager.instance.GetItem(parts[1]))
-                    {
-                        GameManager.instance.inventory.Add(parts[1]);
-                        UpdateStory("The " + parts[1] + " was added to your inventory");
-                    }
-                    else
-                    {
-                        UpdateStory("The " + parts[1] + " was not found.");
-                    }
-                }
-                else if (parts[0] == "restart")
+            }
+            else if(parts.Length == 1)
+            {
+                if (parts[0] == "restart")
                 {
                     NavigationManager.instance.GameRestart();
                 }
-            }
+                else if (parts[0] == "save")
+                {
+                    GameManager.instance.Save();
+                    UpdateStory("Game Saved.");
+                }
+            }    
+        }
             else
             {
                 UpdateStory("Invalid command, try again.");
             }
         }
-    }
 
     public void UpdateStory(string msg)
     {

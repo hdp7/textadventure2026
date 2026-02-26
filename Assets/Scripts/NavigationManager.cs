@@ -7,8 +7,10 @@ public class NavigationManager : MonoBehaviour
 
     public Room startingRoom;
     public Room currentRoom;
+    public List<Room> rooms;
 
     private Dictionary<string, Room> exitRooms = new Dictionary<string, Room>();
+    
 
     public Exit toKeyNorth;
 
@@ -28,10 +30,19 @@ public class NavigationManager : MonoBehaviour
     void Start()
     {
         currentRoom = startingRoom;
-        Unpack();
+        //Unpack();
     }
 
-    void Unpack()
+    public Room GetRoomByName(string name)
+    {
+        foreach(Room room in rooms)
+        {
+            if(room.name == name) return room;
+        }
+        return null;
+    }
+
+    public void Unpack()
     {
         string description = currentRoom.description;
      
@@ -53,7 +64,11 @@ public class NavigationManager : MonoBehaviour
             GameRestart();
         }
     }
-
+    public void SwitchRoom(Room room)
+    {
+        currentRoom = room;
+        Unpack();
+    }
     public bool Switch(string direction)
     {
         if (exitRooms.ContainsKey(direction))
