@@ -11,9 +11,6 @@ public class GameManager : MonoBehaviour
 
     public List<string> inventory = new List<string>();
 
-
-
-
     private void Awake()
     {
         if (instance == null)

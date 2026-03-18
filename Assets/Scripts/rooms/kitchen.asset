@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a56f89f16502f848a729d9605b3712a, type: 3}
+  m_Name: kitchen
+  m_EditorClassIdentifier: 
+  roomName: kitchen
+  description: An old kitchen, filled with old pots and pans... A sharp knife lies
+    wedged in some rotten vegetables
+  exits: []
+  items:
+  - knife

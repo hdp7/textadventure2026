@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows;
-using TMPro;
+using static UnityEditor.Progress;
 
 
 public class InputManager : MonoBehaviour
@@ -38,6 +39,8 @@ public class InputManager : MonoBehaviour
         commands.Add("get");
         commands.Add("restart");
         commands.Add("save");
+        commands.Add("inventory");
+        commands.Add("commands");
 
         //NavigationManager.instance.onRestart += someFunction;
     }
@@ -94,6 +97,30 @@ public class InputManager : MonoBehaviour
                 {
                     GameManager.instance.Save();
                     UpdateStory("Game Saved.");
+                }
+                else if (parts[0] == "inventory")
+                {
+                    //insert Inventory logic here
+                    if (GameManager.instance.inventory.Count > 0)
+                    {
+                        foreach (string item in GameManager.instance.inventory)
+                        {
+                            UpdateStory(item + "\n");
+                        }
+                    }
+                    else
+                    {
+                        UpdateStory("You have no items in your inventory!");
+                    }
+                    
+                }
+                else if (parts[0] == "commands")
+                {
+                    UpdateStory("\nList of Commands:");
+                    foreach (string command in commands)
+                    {
+                        UpdateStory(command);
+                    }
                 }
             }    
         }
