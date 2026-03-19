@@ -37,12 +37,18 @@ public class GameManager : MonoBehaviour
     {
         SaveState gameState = new SaveState();
         gameState.currentRoom = NavigationManager.instance.currentRoom.name;
+        List<string> items = new List<string>();
         //add inventory saving here
+        foreach(string item in inventory)
+        {
+            items.Add(item);
+        }
 
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/player.save");
         Debug.Log(Application.persistentDataPath);
         bf.Serialize(file, gameState);
+        bf.Serialize(file, inventory);
         file.Close();
     }
 
@@ -53,9 +59,15 @@ public class GameManager : MonoBehaviour
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/player.save", FileMode.Open);
             SaveState gameState = (SaveState) bf.Deserialize(file);
+            List<string> items = (List<string>)bf.Deserialize(file);
             file.Close();
 
             //Add inventory loading here
+            foreach (string item in items)
+            {
+                inventory.Add(item);
+            }
+
             Room room = NavigationManager.instance.GetRoomByName(gameState.currentRoom);
             if(room != null)
             {

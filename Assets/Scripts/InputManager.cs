@@ -103,6 +103,7 @@ public class InputManager : MonoBehaviour
                     //insert Inventory logic here
                     if (GameManager.instance.inventory.Count > 0)
                     {
+                        UpdateStory("Current Inventory:");
                         foreach (string item in GameManager.instance.inventory)
                         {
                             UpdateStory(item + "\n");
