@@ -20,6 +20,7 @@ public class ToggleController : MonoBehaviour
     {
         //if(PlayerPrefs.HasKey("darkmode"))
         darkmode = PlayerPrefs.GetInt("darkmode", 1) == 1 ? true : false;
+        PlayerPrefs.Save();
         toggle = GetComponent<Toggle>();
         toggle.onValueChanged.AddListener(UpdateTheme);
     }

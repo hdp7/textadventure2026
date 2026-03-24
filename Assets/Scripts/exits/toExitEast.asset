@@ -15,3 +15,5 @@ MonoBehaviour:
   direction: 2
   description: East looks like a way out...
   room: {fileID: 11400000, guid: 4c28f310f04bf5c4b8d10d023212a12f, type: 2}
+  isLocked: 0
+  isHidden: 1

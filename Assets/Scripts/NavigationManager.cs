@@ -30,7 +30,7 @@ public class NavigationManager : MonoBehaviour
     void Start()
     {
         currentRoom = startingRoom;
-        //Unpack();
+        Unpack();
     }
 
     public Room GetRoomByName(string name)
