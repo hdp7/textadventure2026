@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 193e1ac76e815bd47bdf0d708a688644, type: 3}
   m_Name: toOrbWest
   m_EditorClassIdentifier: 
-  direction: 0
+  direction: 3
   description: A faint glow bleeds from underneath the west door...
   room: {fileID: 11400000, guid: dc8dcdb34d2ad2b48844f517d5d3e96a, type: 2}
+  isLocked: 0
+  isHidden: 0

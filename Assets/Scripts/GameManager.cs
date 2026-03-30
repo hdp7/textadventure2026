@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public List<string> inventory = new List<string>();
 
+    public List<Room> itemRooms = new List<Room>();
+
     private void Awake()
     {
         if (instance == null)
@@ -23,14 +25,41 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        
         NavigationManager.instance.onRestart += ResetGame; //no parentheses, just points event to function
         Load();
     }
 
+
+
     void ResetGame()
     {
         inventory.Clear();
+        ResetItems();
+
+    }
+
+    void ResetItems()
+    {
+        foreach (Room room in itemRooms)
+        {
+            if(room.name == "Key")
+            {
+                inventory.Add("key");
+            }
+            else if (room.name == "Fountain")
+            {
+                inventory.Add("coin");
+            }
+            else if (room.name == "Kitchen")
+            {
+                inventory.Add("knife");
+            }
+            else if (room.name == "Orb")
+            {
+                inventory.Add("orb");
+            }
+        }
     }
 
     public void Save()

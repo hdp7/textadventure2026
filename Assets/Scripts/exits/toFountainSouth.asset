@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a56f89f16502f848a729d9605b3712a, type: 3}
-  m_Name: kitchen
+  m_Script: {fileID: 11500000, guid: 193e1ac76e815bd47bdf0d708a688644, type: 3}
+  m_Name: toFountainSouth
   m_EditorClassIdentifier: 
-  roomName: Kitchen
-  description: This room used to have a blue glow...
-  exits:
-  - {fileID: 11400000, guid: 22eca37c4ddbd354c8ee355e5a13d38b, type: 2}
-  items: []
+  direction: 1
+  description: A fountain lies to the south...
+  room: {fileID: 11400000, guid: e1c9cf13660e9504bb9e810bca9df408, type: 2}
+  isLocked: 0
+  isHidden: 0

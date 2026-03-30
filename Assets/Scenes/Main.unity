@@ -1456,6 +1456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: []
+  itemRooms: []
 --- !u!114 &999234018
 MonoBehaviour:
   m_ObjectHideFlags: 0

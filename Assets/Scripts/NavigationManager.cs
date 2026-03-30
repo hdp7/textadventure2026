@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class NavigationManager : MonoBehaviour
 {
@@ -114,13 +115,26 @@ public class NavigationManager : MonoBehaviour
                     toKeyNorth.isHidden = false;
                 }
             }
+            if (isFound)
+            {
+                if (i == "orb")
+                {
+                    currentRoom.items.Remove(item);
+                    currentRoom.description = "This room used to have a blue glow...";
+                }
+                if (i == "knife")
+                {
+                    currentRoom.items.Remove(item);
+                    currentRoom.description = "A large gash lies where the knife once laid...";
+                }
+                if (i == "coin")
+                {
+                    currentRoom.items.Remove(item);
+                    currentRoom.description = "The fountain shimmers a bit less without the coin...";
+                }
+            }
         }
 
-        if (isFound)
-        {
-            currentRoom.items.Remove(item);
-            currentRoom.description = "This room used to have a blue glow...";
-        }
 
         return isFound; //item not found
     }

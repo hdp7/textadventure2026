@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: start
   m_EditorClassIdentifier: 
   roomName: 
-  description: How did I get here? This places is kinda spooky.
+  description: How did I get here? This places is kinda spooky...
   exits:
-  - {fileID: 11400000, guid: 6a9c201b440ca8645b0ccda7afcc31bc, type: 2}
+  - {fileID: 11400000, guid: 9f90a6f5e48846045948a3452e9477df, type: 2}
   - {fileID: 11400000, guid: ab23b2cf609cf8945b4da6f0b4830fa4, type: 2}
+  items: []

@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: 
   description: A long hallway stretches forth...
-  exits: []
+  exits:
+  - {fileID: 11400000, guid: 6a9c201b440ca8645b0ccda7afcc31bc, type: 2}
+  - {fileID: 11400000, guid: 6dc84fe42184c0c418f52bcd83889351, type: 2}
+  - {fileID: 11400000, guid: 690f05c6da8c3fc4cb58443b322dda64, type: 2}
+  - {fileID: 11400000, guid: d1fa62c9de2baa3458bb68555faa781c, type: 2}
   items: []

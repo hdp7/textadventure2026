@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a56f89f16502f848a729d9605b3712a, type: 3}
   m_Name: fountain
   m_EditorClassIdentifier: 
-  roomName: fountain
-  description: A beautiful fountain lies in the middle of the room... A single coin
-    lies deep within the waters...
-  exits: []
-  items:
-  - coin
+  roomName: Fountain
+  description: This room used to have a blue glow...
+  exits:
+  - {fileID: 11400000, guid: 09adba54931bdf94387c8cef319a008e, type: 2}
+  items: []
