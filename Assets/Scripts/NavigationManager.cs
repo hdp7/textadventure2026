@@ -91,7 +91,7 @@ public class NavigationManager : MonoBehaviour
     public void Unpack()
     {
         string description = currentRoom.description;
-     
+
         exitRooms.Clear(); //clears current room data
         
         foreach (Exit e in currentRoom.exits)
@@ -102,13 +102,24 @@ public class NavigationManager : MonoBehaviour
                 exitRooms.Add(e.direction.ToString(), e.room);
             }
         }
-            
-        InputManager.instance.UpdateStory(description);
-
+           
         if (currentRoom.name == "dragon")
         {
+            if (GameManager.instance.inventory.Contains("knife"))
+            {
+                description = "You use the knife to slay the dragon and reveal its trove full of treasures for the taking. Secret Ending Achieved!";
+            }
             GameRestart();
         }
+        if (currentRoom.name == "win")
+        {
+            if (GameManager.instance.inventory.Contains("coin"))
+            {
+                description = "You use the coin you gathered to pay off your debt, making the dangerous trek worth it! Good Ending Achieved";
+            }
+            GameRestart();
+        }
+        InputManager.instance.UpdateStory(description);
     }
     public void SwitchRoom(Room room)
     {

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: win
   m_EditorClassIdentifier: 
   roomName: Win
-  description: I've won, but at what cost?
+  description: You escape, but do not leave with any riches, leaving you where you
+    started. Neutral Ending Achieved!
   exits:
   - {fileID: 11400000, guid: e0d75b0414846c8409aaa881fd1f8eeb, type: 2}
   items: []

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: dragon
   m_EditorClassIdentifier: 
   roomName: Dragon
-  description: Oh no a dragon! I'm so dead, like what do I do against that thing!?
-    Oh the agony, the pain...
+  description: The dragon engulfs you in flames, turning you to ashes that slowly
+    blow away... Bad Ending Achieved!
   exits:
   - {fileID: 11400000, guid: 3e835183b0a273d40b0d70e689a7d76b, type: 2}
   items: []
