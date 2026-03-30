@@ -15,4 +15,5 @@ MonoBehaviour:
   roomName: Win
   description: I've won, but at what cost?
   exits:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e0d75b0414846c8409aaa881fd1f8eeb, type: 2}
+  items: []

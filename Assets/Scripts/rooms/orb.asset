@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: orb
   m_EditorClassIdentifier: 
   roomName: Orb
-  description: This room used to have a blue glow...
+  description: A glowing orbs lights the room...
   exits:
   - {fileID: 11400000, guid: ac9ff88776384374389a37d69fb942db, type: 2}
   - {fileID: 11400000, guid: 0e3b98925a1607f4db1e4e8326a882df, type: 2}
-  items: []
+  items:
+  - orb

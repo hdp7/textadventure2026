@@ -30,9 +30,54 @@ public class NavigationManager : MonoBehaviour
     }
     void Start()
     {
-        currentRoom = startingRoom;
-        Unpack();
+        //currentRoom = startingRoom;
+        //Unpack();
     }
+
+    void ResetItems()
+    {
+        foreach (Room room in rooms)
+        {
+            if (room.roomName == "Key")
+            {
+                Debug.Log("added key back to key.");
+                if (room.items.Count == 0)
+                {
+                    room.items.Add("key");
+                }
+                room.description = "A shiny key is visible...";
+            }
+            else if (room.roomName == "Fountain")
+            {
+
+                Debug.Log("added coin back to fountain.");
+                if (room.items.Count == 0)
+                {
+                    room.items.Add("coin");
+                }
+                room.description = "A coin glimmers from the fountain...";
+            }
+            else if (room.roomName == "Kitchen")
+            {
+                Debug.Log("added knife back to kitchen.");
+                if (room.items.Count == 0)
+                {
+                    room.items.Add("knife");
+                }
+                room.description = "A sharp knife lies imbedded in a chopping board...";
+            }
+            else if (room.roomName == "Orb")
+            {
+                Debug.Log("added orb back to orb.");
+                if (room.items.Count == 0)
+                {
+                    room.items.Add("orb");
+                }
+                room.description = "A glowing orbs lights the room...";
+            }
+        }
+    }
+
 
     public Room GetRoomByName(string name)
     {
@@ -105,45 +150,44 @@ public class NavigationManager : MonoBehaviour
     public bool GetItem(string item)
     {
         bool isFound = false;
-        foreach(string i in currentRoom.items)
+        foreach (string i in currentRoom.items)
         {
-            if(i == item)
+            if (i == item)
             {
                 isFound = true;
-                if(i == "orb")
-                {
-                    toKeyNorth.isHidden = false;
-                }
-            }
-            if (isFound)
-            {
-                if (i == "orb")
-                {
-                    currentRoom.items.Remove(item);
-                    currentRoom.description = "This room used to have a blue glow...";
-                }
-                if (i == "knife")
-                {
-                    currentRoom.items.Remove(item);
-                    currentRoom.description = "A large gash lies where the knife once laid...";
-                }
-                if (i == "coin")
-                {
-                    currentRoom.items.Remove(item);
-                    currentRoom.description = "The fountain shimmers a bit less without the coin...";
-                }
             }
         }
-
-
+        if (isFound)
+        {
+            if (item == "orb")
+            {
+                toKeyNorth.isHidden = false;
+                currentRoom.items.Remove(item);
+                currentRoom.description = "This room used to have a blue glow...";
+            }
+            else if (item == "knife")
+            {
+                currentRoom.items.Remove(item);
+                currentRoom.description = "A large gash lies where the knife once laid...";
+            }
+            else if (item == "coin")
+            {
+                currentRoom.items.Remove(item);
+                currentRoom.description = "The fountain shimmers a bit less without the coin...";
+            }
+        }
         return isFound; //item not found
     }
+    
 
     public void GameRestart()
-    {
+    { 
         onRestart.Invoke();
+        ResetItems();
         currentRoom = startingRoom;
         toKeyNorth.isHidden = true;
         Unpack();
+        GameManager.instance.Save();
+        Debug.Log("Game reset.");
     }
 }

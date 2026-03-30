@@ -13,8 +13,6 @@ public class Room : ScriptableObject
     //public bool hasKey;
     //public bool hasOrb;
 
-
-
     public List <string> items;
 }
 

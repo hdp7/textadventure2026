@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: key
   m_EditorClassIdentifier: 
   roomName: Key
-  description: There's a key in here! Where could it lead?
+  description: A shiny key is visible...
   exits:
   - {fileID: 11400000, guid: 38c75638c005c5140a7edd7fac396d5e, type: 2}
   items:

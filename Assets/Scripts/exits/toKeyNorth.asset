@@ -16,4 +16,4 @@ MonoBehaviour:
   description: I sense something useful in the north...
   room: {fileID: 11400000, guid: 2583d7558e0c8b84aa3dcbf59d75c598, type: 2}
   isLocked: 0
-  isHidden: 1
+  isHidden: 0

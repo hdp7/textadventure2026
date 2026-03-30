@@ -23,6 +23,7 @@ public class ToggleController : MonoBehaviour
         PlayerPrefs.Save();
         toggle = GetComponent<Toggle>();
         toggle.onValueChanged.AddListener(UpdateTheme);
+        toggle.isOn = darkmode;
     }
 
     void UpdateTheme(bool isChecked)
@@ -56,10 +57,5 @@ public class ToggleController : MonoBehaviour
             placeholderText.color = Color.black;
             toggleText.color = Color.black;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

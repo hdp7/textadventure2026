@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: kitchen
   m_EditorClassIdentifier: 
   roomName: Kitchen
-  description: This room used to have a blue glow...
+  description: A sharp knife lies imbedded in a chopping board...
   exits:
   - {fileID: 11400000, guid: 22eca37c4ddbd354c8ee355e5a13d38b, type: 2}
-  items: []
+  items:
+  - knife

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: fountain
   m_EditorClassIdentifier: 
   roomName: Fountain
-  description: This room used to have a blue glow...
+  description: A coin glimmers from the fountain...
   exits:
   - {fileID: 11400000, guid: 09adba54931bdf94387c8cef319a008e, type: 2}
-  items: []
+  items:
+  - coin
